@@ -5,7 +5,7 @@ dotenv.config({ path: "./config/config.env" });
 
 export const dbConnection = () => {
   mongoose.connect(process.env.MONGO_URL, {
-    dbName:"schema",
+    dbName:process.env.MONGO_DataBase_Name,
   })
   .then(() => {
       console.log("Connected to database!")

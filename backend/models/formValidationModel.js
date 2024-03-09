@@ -59,12 +59,12 @@ const saveFormData = async (formData) => {
 
 // Example usage
 const formData = {
-  firstName: 'John',
-  lastName: 'Doe',
-  date: '2022-03-10',
-  time: '15:30',
-  email: 'john.doe@example.com',
-  phone: '12345678901',
+  firstName: 'Sample_firt_name',
+  lastName: 'Sample_last_name',
+  date: '0000-00-00',
+  time: '00:00',
+  email: 'sample.doe@example.com',
+  phone: '00000000000',
 };
 
 // Call the function to save data
