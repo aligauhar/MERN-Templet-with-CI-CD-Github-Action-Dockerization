@@ -1,0 +1,6 @@
+1. clone repo
+2. cd to frontend run npm i
+3. cd to backend run npm i
+4. follow backend/config/config_sample.env
+5. follow frontend/config/config_sample.env
+6. npm run dev for fronend and backend
