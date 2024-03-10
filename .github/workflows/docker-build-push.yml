@@ -1,0 +1,53 @@
+name: Build and Push Docker Images
+
+on:
+  push:
+    branches:
+      - main
+
+env:
+  DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+  DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+  REGISTRY: ${{ secrets.DOCKER_REGISTRY }}
+  IMAGE_NAME_FRONTEND: ${{ secrets.DOCKER_IMAGE_FRONTEND }}
+  IMAGE_NAME_BACKEND: ${{ secrets.DOCKER_IMAGE_BACKEND }}
+  
+
+jobs:
+  build-and-push-frontend:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Build the Docker image
+        run: docker build -t "${{ env.REGISTRY }}/${{ env.IMAGE_NAME_FRONTEND }}:latest" ./frontend
+
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v1
+        with:
+          username: ${{ env.DOCKER_USERNAME }}
+          password: ${{ env.DOCKER_PASSWORD }}
+
+      - name: Push frontend Docker image
+        run: docker push ${{ env.REGISTRY }}/${{ env.IMAGE_NAME_FRONTEND }}:latest
+
+  build-and-push-backend:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Build the Docker image
+        run: docker build -t "${{ env.REGISTRY }}/${{ env.IMAGE_NAME_BACKEND }}:latest" ./backend
+  
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v1
+        with:
+          username: ${{ env.DOCKER_USERNAME }}
+          password: ${{ env.DOCKER_PASSWORD }}
+
+      - name: Push backend Docker image
+        run: docker push ${{ env.REGISTRY }}/${{ env.IMAGE_NAME_BACKEND }}:latest
