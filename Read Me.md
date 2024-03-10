@@ -15,8 +15,7 @@ or
 # When Deploying
 1. Set the dockers variables in secrets
 2. Customize Dockerfile if any changes
-3. Customize Vercel gitActions for your vercel repo
-4. push it in you repo
+3. push it in you repo
 
 # *****What will you get here?
 # Backend and Database
@@ -28,6 +27,5 @@ Express bakend with controller, routes, Models and errorHandlers with simple for
 # Frontend
 Vite-React frontend with components and api callind for connecting the backend through axon
 
-# CI/CD
+# CI (CD - for auto vercel deployment see the second repo)
 Automatic Dockerization with github actions
-Automatic Web Hosting on  Vercel with Github Action
