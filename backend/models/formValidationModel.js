@@ -38,8 +38,6 @@ const FormSchema = new mongoose.Schema({
 export const FormValidation = mongoose.model("FormValidation", FormSchema);
 
 
-
-
 // Function to save data to MongoDB
 const saveFormData = async (formData) => {
   try {

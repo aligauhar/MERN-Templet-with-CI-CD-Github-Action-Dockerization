@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import dotenv from "dotenv";
+
+// dotenv.config({ path: "./config/config.env" });
 const FormFrontend = () => {
   const [formData, setFormData] = useState({
     firstName: '',
@@ -18,16 +21,21 @@ const FormFrontend = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
   
-    try {
-      const response = await axios.post("http://127.0.0.1:8000/api/v1/form/send", formData);
-      console.log(response.data);
-      setSuccessMessage('Form submitted successfully!');
-      clearForm();
-    } catch (error) {
-      console.error('Error sending form data:', error);
-      setErrorMessage('Error submitting form. Please try again.');
-    }
-  
+    axios({
+      method: 'post',
+      url: 'http://localhost:8000/api/v1/form/send',
+      data: formData,
+    })
+      .then((response) => {
+        console.log(response.data);
+        setSuccessMessage('Form submitted successfully!');
+        clearForm();
+      })
+      .catch((error) => {
+        console.error('Error sending form data:', error);
+        setErrorMessage('Error submitting form. Please try again.');
+      });
+    
     // Clear messages after 5 seconds
     setTimeout(() => {
       setSuccessMessage('');
