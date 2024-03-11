@@ -1,5 +1,5 @@
 # see how the website is been structured to reuse it easily for other utilizind MVC concept
-[# click here | draw.io link](https://drive.google.com/file/d/1xs-vqumhTuXOdpN9sO3Vec6rlQ1d3UaG/view?usp=sharing)
+[draw.io link](https://drive.google.com/file/d/1fV-xC6p-pa_BGYPeo5KoTS2Xuxe71QFY/view?usp=sharing){:target="_blank"}
 
 # Frontend image
 ![Frontend Schema](./frontend/img.PNG)
