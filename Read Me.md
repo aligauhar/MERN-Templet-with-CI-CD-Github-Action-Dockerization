@@ -29,3 +29,4 @@ Vite-React frontend with components and api callind for connecting the backend t
 
 # CI (CD - for auto vercel deployment see the second repo)
 Automatic Dockerization with github actions
+*** For Auto vercel deployment CD see here: [Auto Vercel Hosting]([URL](https://github.com/aligauhar/MERN-Templet-with-CD-VercelHosting-With-GithubActions)https://github.com/aligauhar/MERN-Templet-with-CD-VercelHosting-With-GithubActions)
